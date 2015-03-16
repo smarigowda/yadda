@@ -21,9 +21,10 @@ module.exports = (function() {
         var driver = this.driver;
         driver.wait(function() {
             return driver.getTitle().then(function(value) {
+                // console.log(value);
                 return value === title;
             });
-        }, 5000);
+        }, 100000);
     })
 
     .then("the $ACTION form exists", function(action) {
@@ -44,7 +45,7 @@ module.exports = (function() {
             return driver.getCurrentUrl().then(function(value) {
                 return new RegExp('q=' + term).test(value);
             });
-        }, 5000);
+        }, 100000);
     })
 
     .then("$NUM or more results were returned", function(number) {
