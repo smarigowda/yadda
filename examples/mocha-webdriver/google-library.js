@@ -24,7 +24,7 @@ module.exports = (function() {
                 // console.log(value);
                 return value === title;
             });
-        }, 100000);
+        }, 10000);
     })
 
     .then("the $ACTION form exists", function(action) {
@@ -45,7 +45,7 @@ module.exports = (function() {
             return driver.getCurrentUrl().then(function(value) {
                 return new RegExp('q=' + term).test(value);
             });
-        }, 100000);
+        }, 10000);
     })
 
     .then("$NUM or more results were returned", function(number) {
